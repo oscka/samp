@@ -46,4 +46,13 @@ public class QueryBoardController {
         BoardDto boardDto = queryBoardService.board(num);
         return boardDto;
     }
+
+    @Operation(summary = "[Feign] 게시판 목록 조회", description = "게시판 목록을 페이지로 조회합니다.")
+    @GetMapping("/listFeign")
+    public List<BoardDto> boardListFeign(@RequestParam(value = "size", defaultValue = "10") int size, @RequestParam(value = "page", defaultValue = "1") int page) {
+        log.info("boarList Request Param size : {}, page : {}", size, page);
+        List<BoardDto> boardList = queryBoardService.boardListFeign(size, page);
+        return boardList;
+    }
+
 }

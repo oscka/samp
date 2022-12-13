@@ -1,18 +1,22 @@
 package com.samp.board.query.service;
 
+import com.samp.board.query.controller.QueryBoardClient;
 import com.samp.board.query.dto.BoardDto;
 import com.samp.board.query.repository.QueryBoardRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class QueryBoardService {
 
     private final QueryBoardRepository queryBoardRepository;
+    private final QueryBoardClient queryBoardClient;
 
     public int totalCount() {
         return (int) queryBoardRepository.count();
@@ -32,5 +36,16 @@ public class QueryBoardService {
     public BoardDto board(int num) {
         BoardDto boardDto = queryBoardRepository.board(num);
         return boardDto;
+    }
+
+    /**
+     * Open Feign boarList 호출
+     * @param size
+     * @param page
+     * @return
+     */
+    public List<BoardDto> boardListFeign(int size, int page) {
+        log.info("[Open Feing] board list");
+        return queryBoardClient.boardList(size, page);
     }
 }

@@ -35,3 +35,15 @@ springdoc:
 #    operationsSorter: method
 #    disable-swagger-default-url: true
 #    display-request-duration: true
+
+# Open Feign
+api:
+  board:
+    url: http://localhost:8080/samp
+
+
+logging:
+  level:
+    root: info
+    com:
+      samp: debug

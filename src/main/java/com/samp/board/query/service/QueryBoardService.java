@@ -1,6 +1,6 @@
 package com.samp.board.query.service;
 
-import com.samp.board.query.controller.QueryBoardClient;
+import com.samp.board.query.client.QueryBoardClient;
 import com.samp.board.query.dto.BoardDto;
 import com.samp.board.query.repository.QueryBoardRepository;
 import lombok.RequiredArgsConstructor;
@@ -47,5 +47,15 @@ public class QueryBoardService {
     public List<BoardDto> boardListFeign(int size, int page) {
         log.info("[Open Feing] board list");
         return queryBoardClient.boardList(size, page);
+    }
+
+    public List<BoardDto> boardSearchFeign(String search) {
+        log.info("[Open Feing] board search");
+        return queryBoardClient.boardSearch(search);
+    }
+
+    public BoardDto boardfeign(int num) {
+        log.info("[Open Feing] board search");
+        return queryBoardClient.board(num);
     }
 }

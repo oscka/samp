@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class FeignConfig {
 
-    @Bean
-    public ErrorDecoder errorDecoder() {
-        return new ResponseErrorDecoder();
-    }
+//    @Bean
+//    public ErrorDecoder errorDecoder() {
+//        return new ResponseErrorDecoder();
+//    }
 
     @Bean
     @ConditionalOnMissingBean

@@ -1,6 +1,9 @@
+### Feign
+GET http://localhost:8080/samp/api/v1/boards/listFeign
+
+###
 ##########local########
 GET http://localhost:8080/samp/api/v1/boards/list
-
 ###
 GET http://localhost:8080/samp/api/v1/boards/search?search=test
 

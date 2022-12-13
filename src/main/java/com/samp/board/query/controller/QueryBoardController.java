@@ -55,4 +55,16 @@ public class QueryBoardController {
         return boardList;
     }
 
+    @Operation(summary = "[Feign] 게시판 검색", description = "해당 게시물을 조회합니다.")
+    @GetMapping("/searchFeign")
+    public List<BoardDto> boardSearchFeign(@RequestParam("search") String search) {
+        return queryBoardService.boardSearchFeign(search + "%");
+    }
+
+    @Operation(summary = "[Feign] 게시판 조회", description = "해당 게시물을 조회합니다.")
+    @GetMapping("/feign/{num}")
+    public BoardDto boardFeign(@Parameter(description="게시물 번호") @PathVariable("num") int num) {
+        BoardDto boardDto = queryBoardService.boardfeign(num);
+        return boardDto;
+    }
 }

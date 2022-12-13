@@ -1,0 +1,36 @@
+##########local########
+GET http://localhost:8080/samp/api/v1/boards/list
+
+###
+GET http://localhost:8080/samp/api/v1/boards/search?search=test
+
+###
+GET http://localhost:8080/samp/api/v1/boards/19
+
+###
+POST  http://localhost:8080/samp/api/v1/boards/registration
+Content-Type: application/json
+
+{
+  "title": "test insert-4",
+  "contents": "test insert-4",
+  "writeId": "user1",
+  "writeName": "사용자1",
+  "writeDate": "2022-01-25T16:20:41"
+}
+
+###
+POST http://localhost:8080/samp/api/v1/boards/modify
+Content-Type: application/json
+
+{
+  "num": 18,
+  "title": "clt-test-수정",
+  "contents": "clt-test-수정",
+  "modifyId": "user1",
+  "modifyName": "사용자1",
+  "modifyDate": "2021-02-14T16:20:45"
+}
+
+###
+POST http://localhost:8080/samp/api/v1/boards/delete/18

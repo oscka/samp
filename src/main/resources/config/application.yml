@@ -1,15 +1,17 @@
 ###########
 ### 공통 ###
 ###########
-server:
-  tomcat:
-    uri-encoding: UTF-8
-  servlet:
-    context-path: /samp
+#server:
+#  tomcat:
+#    uri-encoding: UTF-8
+#  servlet:
+#    context-path: /samp
 
 spring:
+  application:
+    name: samp
   profiles:
-    active: local;
+    active: local
 
 logging:
   level:

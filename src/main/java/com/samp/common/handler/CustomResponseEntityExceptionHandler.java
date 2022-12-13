@@ -2,6 +2,7 @@ package com.samp.common.handler;
 
 import com.samp.common.exception.BadRequestException;
 import com.samp.common.exception.BizRuntimeException;
+import com.samp.common.exception.InterfaceException;
 import com.samp.common.exception.ResourceNotFoundException;
 import feign.FeignException;
 import io.lettuce.core.RedisException;
@@ -62,5 +63,9 @@ public class CustomResponseEntityExceptionHandler extends ResponseEntityExceptio
         return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-
+    @ExceptionHandler(InterfaceException.class)
+    public ResponseEntity<Object> heandlerInterfaceException(InterfaceException exception) {
+        log.error("Exception ##heandlerInterfaceException : {}", exception.getMessage());
+        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }

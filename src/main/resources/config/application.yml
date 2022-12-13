@@ -13,3 +13,10 @@ spring:
   profiles:
     active: local
 
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 3000  # feign의 전역 timeout 설정 : 20초
+        readTimeout: 20000
+        loggerLevel: FULL ##basic

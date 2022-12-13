@@ -2,29 +2,29 @@
 GET http://localhost:8080/samp/api/v1/boards/list
 
 ###
-GET http://localhost:8080/samp/api/v1/boards/search?search=미국
+GET http://localhost:8080/samp/api/v1/boards/search?search=test
 
 ###
-GET http://localhost:8080/samp/api/v1/boards/1
+GET http://localhost:8080/samp/api/v1/boards/19
 
 ###
-POST  http://localhost:8080/samp/api/v1/boards
+POST  http://localhost:8080/samp/api/v1/boards/registration
 Content-Type: application/json
 
 {
-  "title": "test insert-1",
-  "contents": "test insert-1",
+  "title": "test insert-4",
+  "contents": "test insert-4",
   "writeId": "user1",
   "writeName": "사용자1",
   "writeDate": "2022-01-25T16:20:41"
 }
 
 ###
-PUT http://localhost:8080/samp/api/v1/boards
+POST http://localhost:8080/samp/api/v1/boards/modify
 Content-Type: application/json
 
 {
-  "num": 1,
+  "num": 18,
   "title": "clt-test-수정",
   "contents": "clt-test-수정",
   "modifyId": "user1",
@@ -33,4 +33,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:8080/samp/api/v1/boards/1
+POST http://localhost:8080/samp/api/v1/boards/delete/18

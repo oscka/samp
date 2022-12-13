@@ -3,15 +3,18 @@ package com.samp.board.command.domain;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(description = "게시판 Command 엔티티")
+@Schema(description = "게시판Command 엔티티")
 @ToString
+@Table("board")
 public class Board {
     @Id
     @Schema(description = "게시물 번호", nullable = false, example = "1")

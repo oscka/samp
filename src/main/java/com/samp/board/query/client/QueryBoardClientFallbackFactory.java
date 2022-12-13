@@ -2,6 +2,7 @@ package com.samp.board.query.client;
 
 import com.samp.board.query.dto.BoardDto;
 import com.samp.common.dto.ResultMessage;
+import com.samp.common.utils.ExceptionUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.openfeign.FallbackFactory;
 import org.springframework.stereotype.Component;
@@ -15,7 +16,7 @@ public class QueryBoardClientFallbackFactory implements FallbackFactory<QueryBoa
     @Override
     public QueryBoardClient create(Throwable cause) {
 
-        ResultMessage resultMessage =
+        ResultMessage resultMessage = ExceptionUtil.getResponseMessage(cause);
         @Override
         public List<BoardDto> boardList(@RequestParam(value = "size", defaultValue = "10") int size, @RequestParam(value = "page", defaultValue = "1") int page) {
             log.info("fallback called : boardList = {}");

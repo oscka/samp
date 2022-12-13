@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ExceptionUtil {
 
-    public ResultMessage getResponseMessage(Throwable cause) {
+    public static ResultMessage getResponseMessage(Throwable cause) {
         log.error("[Error] response error : {}", cause);
 
         if(cause instanceof InterfaceException) {

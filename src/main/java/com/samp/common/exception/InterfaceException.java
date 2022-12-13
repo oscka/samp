@@ -18,4 +18,8 @@ public class InterfaceException extends FeignException {
     super(status, JsonUtils.toJson(resultMessage), request);
   }
 
+  public ResultMessage getResponseMessage() {
+    return JsonUtils.readJson(this.getMessage(), ResultMessage.class);
+  }
+
 }

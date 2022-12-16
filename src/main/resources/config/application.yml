@@ -9,12 +9,14 @@
 
 spring:
   application:
-    name: samp
+    name: sampQueryBoardService
   profiles:
     active: local
 
-logging:
-  level:
-    root: info
-    com:
-      samp: debug
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 3000  # feign의 전역 timeout 설정 : 20초
+        readTimeout: 20000
+        loggerLevel: FULL ##basic

@@ -17,10 +17,25 @@ public class QueryBoardClientFallbackFactory implements FallbackFactory<QueryBoa
     public QueryBoardClient create(Throwable cause) {
 
         ResultMessage resultMessage = ExceptionUtil.getResponseMessage(cause);
-        @Override
-        public List<BoardDto> boardList(@RequestParam(value = "size", defaultValue = "10") int size, @RequestParam(value = "page", defaultValue = "1") int page) {
-            log.info("fallback called : boardList = {}");
-        }
-        return null;
+
+        return new QueryBoardClient() {
+            @Override
+            public List<BoardDto> boardList(int size, int page) {
+                log.info("fallback called : boardList = {}", resultMessage);
+                return (List<BoardDto>) BoardDto.builder().build();
+            }
+
+            @Override
+            public List<BoardDto> boardSearch(String search) {
+                log.info("fallback called : boardSearch = {}", resultMessage);
+                return (List<BoardDto>) BoardDto.builder().build();
+            }
+
+            @Override
+            public BoardDto board(int num) {
+                log.info("fallback called : board = {}", resultMessage);
+                return BoardDto.builder().build();
+            }
+        };
     }
 }

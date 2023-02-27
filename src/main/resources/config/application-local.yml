@@ -7,9 +7,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:13306/samp?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul&useUnicode
+    url: jdbc:mysql://localhost:3306/samp?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul&useUnicode
     username: root
-    password: admin
+    password: 1234
     hikari:
       pool-name: hikari-cp
       maximum-pool-size: 30
@@ -19,6 +19,10 @@ spring:
         prepStmtCacheSize: 250
         prepStmtCacheSqlLimit: 2048
         useServerPrepStmts: true
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 3000
 
   jpa:
     show-sql: true

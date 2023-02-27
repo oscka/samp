@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import org.springframework.data.relational.core.mapping.Table;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Getter
@@ -14,7 +15,7 @@ import java.time.LocalDateTime;
 @ToString
 @Table("board")
 @Schema(description = "게시판 Query DTO")
-public class BoardDto {
+public class BoardDto implements Serializable {
     @Schema(description = "게시물 번호", nullable = false, example = "1")
     private int num;
     @Schema(description = "게시물 제목", nullable = false, example = "제목")

@@ -14,3 +14,10 @@ MSA 레퍼런스 아키텍처
 
 ## OpenAPI Swagger UI
 * http://localhost:8080/swagger-ui/index.html
+
+## Docker mysql 설치
+```
+docker pull mysql:8.0
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=1234 -d -p 3306:3306 mysql:8.0
+```
+

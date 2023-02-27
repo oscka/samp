@@ -8,7 +8,7 @@ GET http://localhost:8080/samp/api/v1/boards/list
 GET http://localhost:8080/samp/api/v1/boards/search?search=test
 
 ###
-GET http://localhost:8080/samp/api/v1/boards/19
+GET http://localhost:8080/samp/api/v1/boards/1
 
 ###
 POST  http://localhost:8080/samp/api/v1/boards/registration

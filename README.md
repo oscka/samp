@@ -30,3 +30,12 @@ $ docker start mysql-container
 $ docker restart mysql-container
 ```
 
+## MySql Docker 컨테이너 접속
+```
+docker exec -it mysql-container bash
+
+mysql -u root -p
+
+show databases;
+```
+

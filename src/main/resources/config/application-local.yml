@@ -9,7 +9,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/samp?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul&useUnicode
     username: root
-    password: 1234
+    password: admin
     hikari:
       pool-name: hikari-cp
       maximum-pool-size: 30
@@ -23,6 +23,7 @@ spring:
     host: localhost
     port: 6379
     timeout: 3000
+    password: new1234
 
   jpa:
     show-sql: true

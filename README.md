@@ -39,3 +39,36 @@ mysql -u root -p
 show databases;
 ```
 
+## docker compose 설치 방법
+* docker-compose.yaml
+```
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    ports:
+      - 3306:3306 # HOST:CONTAINER
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - D:/mysql/data:/var/lib/mysql
+```
+* docker 실행 및 container 접속
+```
+# 컨테이너 생성 및 실행
+docker-compose -f docker-compose.yaml up -d
+
+# 컨테이너만 조회
+docker ps -a
+```
+* docker 컨테이너 접속
+```
+docker exec -it mysql /bin/bash
+
+mysql -u root -p
+```
+

@@ -15,6 +15,7 @@ POST  http://localhost:8080/samp/api/v1/boards/registration
 Content-Type: application/json
 
 {
+
   "title": "test insert-4",
   "contents": "test insert-4",
   "writeId": "user1",
